@@ -2,7 +2,14 @@ import React, { useState } from "react";
 import Button from "../Button";
 import styles from "../ImcCalc/style.module.css";
 
-export default function ImcCalc() {
+interface ImcCalcProps {
+  actionCalc: (
+    e: React.MouseEvent<HTMLButtonElement>,
+    altura: string,
+    peso: string
+  ) => void;
+}
+export default function ImcCalc({ actionCalc }: ImcCalcProps) {
   const [altura, setAltura] = useState("");
   const [peso, setPeso] = useState("");
 
@@ -57,7 +64,7 @@ export default function ImcCalc() {
           </div>
         </div>
         <div className={styles.actionsControl}>
-          <Button classs="calcBtn" action={Number}>
+          <Button classs="calcBtn" action={(e) => actionCalc(e, altura, peso)}>
             Calcular
           </Button>
           <Button classs="clearBtn" action={clearForm}>
