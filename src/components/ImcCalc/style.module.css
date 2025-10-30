@@ -1,0 +1,30 @@
+.formContainer {
+  min-width: 400px;
+  min-height: 400px;
+  background-color: rgb(68, 68, 68);
+  padding: 24px;
+}
+
+.title {
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.formControl {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.formControl input {
+  outline: none;
+  padding: 16px 8px;
+}
+
+.actionsControl {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
