@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import "./App.css";
 import ImcCalc from "./components/ImcCalc";
 import ImcTable from "./components/ImcTable";
+import { data } from "./data/data.ts";
+
 function App() {
   const [imc, setImc] = useState<number | null>(null);
   const [info, setInfo] = useState();
@@ -21,11 +23,20 @@ function App() {
     const resultImc = parseFloat(
       (pesoNum / (alturaNum * alturaNum)).toFixed(1)
     );
+
     console.log(resultImc);
     setImc(resultImc);
   }
 
-  return <>{!imc ? <ImcCalc actionCalc={calcImc} /> : <ImcTable />}</>;
+  return (
+    <>
+      {!imc ? (
+        <ImcCalc actionCalc={calcImc} />
+      ) : (
+        <ImcTable data={data} imc={imc} />
+      )}
+    </>
+  );
 }
 
 export default App;
