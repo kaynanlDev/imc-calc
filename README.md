@@ -1,73 +1,69 @@
-# React + TypeScript + Vite
+# IMC React - Calculadora de Índice de Massa Corporal
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este projeto é uma aplicação React para cálculo do Índice de Massa Corporal (IMC), desenvolvida com Vite.
 
-Currently, two official plugins are available:
+## 📋 Descrição
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Uma aplicação web moderna e responsiva que permite aos usuários calcular seu Índice de Massa Corporal (IMC) de forma rápida e intuitiva. A aplicação fornece feedback visual sobre a categoria do IMC calculado.
 
-## React Compiler
+## 🚀 Tecnologias Utilizadas
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **React** - Biblioteca JavaScript para construção da interface
+- **Vite** - Ferramenta de build e desenvolvimento
+- **HTML5** - Estrutura da aplicação
+- **CSS3** - Estilização e design responsivo
+- **Google Fonts** - Família de fontes Lato para tipografia
 
-## Expanding the ESLint configuration
+## 🛠️ Como Executar o Projeto
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### Pré-requisitos
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- Node.js instalado (versão 14 ou superior)
+- npm ou yarn
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+### Instalação e Execução
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+1. **Clone o repositório:**
+   ```bash
+   git clone [URL do repositório]
+   cd imc-react
+   ```
+2. **Instale as dependências:**
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+````bash
+npm install
+    ou
+yarn install
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+3. **Execute em modo de desenvolvimento:**
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+```bash
+npm run dev
+  ou
+yarn dev
+
+4. **Acesse a aplicação:**
+Abra o navegador e acesse http://localhost:5173
+
+
+✨ **Funcionalidades**
+✅ Cálculo automático do IMC
+
+✅ Interface moderna
+
+✅ Classificação do resultado (Abaixo do peso, Normal, Sobrepeso, etc.)
+
+✅ Feedback visual imediato
+
+✅ Design amigável e acessível
+
+🎨 **Características Técnicas**
+Desenvolvido com React e Vite para performance otimizada
+
+Utiliza a fonte Lato do Google Fonts
+
+Build otimizada para produção
+
+
+Desenvolvido com ❤️ usando React e Vite
+````
