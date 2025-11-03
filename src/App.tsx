@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import "./App.css";
 import ImcCalc from "./components/ImcCalc";
 import ImcTable from "./components/ImcTable";
-import { data } from "./data/data.ts";
 
 function App() {
   const [imc, setImc] = useState<number | null>(null);
