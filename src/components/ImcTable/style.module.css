@@ -28,3 +28,33 @@
   justify-content: center;
   gap: 8px;
 }
+
+p {
+  text-align: center;
+  font-size: 24px;
+  font-weight: 600;
+}
+h3 {
+  text-align: center;
+  margin-top: 24px;
+}
+table {
+  width: 100%;
+  margin-top: 16px;
+  gap: 16px;
+}
+th {
+  text-align: start;
+}
+
+.obesidade,
+.obesidadeGrave {
+  color: red;
+}
+.magreza,
+.sobrepeso {
+  color: yellow;
+}
+.normal {
+  color: rgb(0, 211, 0);
+}

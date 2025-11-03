@@ -6,7 +6,7 @@ import { data } from "./data/data.ts";
 
 function App() {
   const [imc, setImc] = useState<number | null>(null);
-  const [info, setInfo] = useState();
+  const [situation, setSituation] = useState("");
 
   function calcImc(
     e: React.MouseEvent<HTMLButtonElement>,
@@ -26,6 +26,21 @@ function App() {
 
     console.log(resultImc);
     setImc(resultImc);
+    situationImc(resultImc);
+  }
+
+  function situationImc(imc: number) {
+    if (imc < 18.5) {
+      setSituation("Magreza");
+    } else if (imc >= 18.5 && imc <= 24.9) {
+      setSituation("Normal");
+    } else if (imc >= 25 && imc <= 29.9) {
+      setSituation("Sobrepeso");
+    } else if (imc >= 30 && imc <= 39.9) {
+      setSituation("Obesidade");
+    } else {
+      setSituation("Obesidade grave");
+    }
   }
 
   return (
@@ -33,7 +48,7 @@ function App() {
       {!imc ? (
         <ImcCalc actionCalc={calcImc} />
       ) : (
-        <ImcTable data={data} imc={imc} />
+        <ImcTable imc={imc} situation={situation} />
       )}
     </>
   );

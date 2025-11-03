@@ -1,28 +1,39 @@
+import clsx from "clsx";
 import styles from "./style.module.css";
-import type { ImcPessoas } from "../../data/data";
 
 interface listPessoasImc {
-  data: ImcPessoas[];
   imc: number;
+  situation: string;
 }
-export default function ImcTable({ data, imc }: listPessoasImc) {
+export default function ImcTable({ imc, situation }: listPessoasImc) {
   return (
     <div className={styles.formContainer}>
       <div>
-        <p>
-          Seu IMC: <span>{imc}</span>
+        <p className="text-center">
+          Seu IMC: <span>{imc ?? "Não calculado"}</span>
         </p>
         <p>
-          Situação atual: <span>{data.classificacao}</span>
+          Situação atual:{" "}
+          <span
+            className={clsx("default", {
+              [styles.magreza]: imc !== null && imc < 18.5,
+              [styles.normal]: imc !== null && imc >= 18.5 && imc <= 24.9,
+              [styles.sobrepeso]: imc !== null && imc >= 25 && imc <= 29.9,
+              [styles.obesidade]: imc !== null && imc >= 30 && imc <= 39.9,
+              [styles.obesidadeGrave]: imc !== null && imc > 40,
+            })}
+          >
+            {situation || "Não calculado"}
+          </span>
         </p>
       </div>
       <h3>Confira a tabela</h3>
       <table>
-        <thead>
+        <tr>
           <th>IMC</th>
           <th>Classificação</th>
           <th>obesidade</th>
-        </thead>
+        </tr>
         <tbody>
           <tr>
             <td>Menor que 18,5</td>
